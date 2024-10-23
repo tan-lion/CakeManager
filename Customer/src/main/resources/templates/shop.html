@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<!-- Basic -->
+
+<head th:replace="~{fragments::head}" >
+
+
+</head>
+
+<body>
+    <!-- Start Main Top -->
+    <div th:replace="~{fragments::main-top}"></div>
+    <!-- End Main Top -->
+
+
+   <!-- Start Main Top -->
+   <header class="main-header" th:replace="~{fragments::main-header}">
+
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div class="top-search" th:replace="~{fragments::top-search}">
+
+</div>
+<!-- End Top Search -->
+
+
+
+
+
+    <!-- Start All Title Box -->
+    <div th:replace="~{fragments::all-title-box}"></div>
+    <!-- End All Title Box -->
+
+    <!-- Start Shop Page  -->
+    <div class="shop-box-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
+                    <div class="right-product-box">
+                        <div class="product-item-filter row">
+                            <div class="col-12 col-sm-8 text-center text-sm-left">
+                                <div class="toolbar-sorter-right">
+                                    <span>Sort by </span>
+                                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+									<option data-display="Select">Nothing</option>
+									<option value="2">High Price → High Price</option>
+									<option value="3">Low Price → High Price</option>
+									<option value="4">Best Selling</option>
+								</select>
+                                </div>
+                                <p>Showing all results</p>
+                            </div>
+                            <div class="col-12 col-sm-4 text-center text-sm-right">
+                                <ul class="nav nav-tabs ml-auto">
+                                    <li>
+                                        <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="product-categorie-box">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <img src="images/Crab 01 - Crab Pasta With Snap Peas and Mint.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="product-detail.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+
+                                                        <a class="cart" href="#">Thêm</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Crab Pasta With Snap Peas and Mint</h4>
+                                                    <h5> $50.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <img src="images/Crab 04 - Soft Shell Crab Crostini With Arugula Butter.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="product-detail.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+                                                        <a class="cart" href="#">Thêm</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Soft Shell Crab Crostini With Arugula Butter</h4>
+                                                    <h5> $30.75</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <img src="images/Crab 06 - Baked Crab Dip With Old Bay and Ritz Crackers.png" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="product-detail.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>                                                        </ul>
+                                                        <a class="cart" href="#">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Baked Crab Dip With Old Bay and Ritz Crackers</h4>
+                                                    <h5> $36.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+
+                                                    <img src="images/Fish 01 - Fish Tacos.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="product-detail.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+                                                        <a class="cart" href="#">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Fish Tacos</h4>
+                                                    <h5> $35.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <img src="images/Fish 03 - Lemon-Batter Fish.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+                                                        <a class="cart" href="#">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Lemon-Batter Fish</h4>
+                                                    <h5> $35.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <img src="images/Fish 05 - Almond-Topped Fish.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+                                                        <a class="cart" href="#">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Almond-Topped Fish</h4>
+                                                    <h5> $36.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <img src="images/Lobster 01 - Lobster thermidor.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="product-detail.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+                                                        <a class="cart" href="#">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Lobster thermidor</h4>
+                                                    <h5> $60.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <img src="images/Shrimp 01 - Shrimp Monterey.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="product-detail.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+                                                        <a class="cart" href="#">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Shrimp Monterey</h4>
+                                                    <h5> $65.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                   <img src="images/Shrimp 02 - Southern Shrimp and Grits.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="product-detail.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        </ul>
+                                                        <a class="cart" href="#">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                                <div class="why-text">
+                                                    <h4>Southern Shrimp and Grits</h4>
+                                                    <h5> $60.00</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div role="tabpanel" class="tab-pane fade" id="list-view">
+                                    <div class="list-view-box">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                                <div class="products-single fix">
+                                                    <div class="box-img-hover">
+                                                        <img src="images/Crap Soft-Shell.jpg" class="img-fluid" alt="Image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                                                <div class="why-text full-width">
+                                                    <h4>Soft Shell Crab Crostini With Arugula Butter</h4>
+                                                    <h5>$30.75</h5>
+                                                    <p> The trick is to know when to take them off the heat. As soon as they turn from gray-brown to rust and white, the texture goes from soft to taut and they are ready.</p>
+                                                    <p> Soft-shell crabs don't need much adornment; a squirt of citrus and some freshly ground black pepper offset the funky sea flavor beautifully.
+                                                        But a little garlic and something green and sprightly (here, a combination of arugula and chives) can make them even better.</p>
+                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-view-box">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                                <div class="products-single fix">
+                                                    <div class="box-img-hover">
+                                                        <img src="images/Fish 01 - Fish Tacos.jpg" class="img-fluid" alt="Image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                                                <div class="why-text full-width">
+                                                    <h4>Fish Tacos</h4>
+                                                    <h5>$35.00</h5>
+                                                    <p>Searching for a lighter alternative to traditional fried fish, I came up with this crispy, crunchy fish tacos recipe. It's a hit with friends and family. </p>
+                                                    <p>Fish tacos are a favorite quick and easy weeknight meal. Choose cod, tilapia, or halibut, quickly pan-sear in a skillet, and serve with a simply cabbage slaw.</p>
+                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-view-box">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                                <div class="products-single fix">
+                                                    <div class="box-img-hover">
+                                                        <img src="images/Lobster 04 - Warm lobster..jpg" class="img-fluid" alt="Image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                                                <div class="why-text full-width">
+                                                    <h4>Warm lobster</h4>
+                                                    <h5>$40.75</h5>
+                                                    <p> Maybe there is nothing better than a boiled lobster straight from the pot, easily managed for two people, with no more accompaniment than a little melted butter.
+                                                        But sometimes that is too simple a preparation. So how about lobster stew? Not difficult, and easier to eat.
+                                                        For a homey-sophisticated touch, though, we suggest this lobster stew with a pastry lid, finished with a shower of freshly snipped herbs.</p>
+                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-view-box">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                                <div class="products-single fix">
+                                                    <div class="box-img-hover">
+                                                        <img src="images/Octopus 04 - Pan-Seared Octopus with Italian Vegetable Salad.jpg" class="img-fluid" alt="Image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                                                <div class="why-text full-width">
+                                                    <h4>Pan-Seared Octopus with Italian Vegetable Salad</h4>
+                                                    <h5>$50.75</h5>
+                                                    <p> Vinny Dotolo describes this salad's genesis: "I originally wanted to do an octopus sandwich, with the flavors of an Italian sub, but the bread got in the way."
+                                                        Now he sears the octopus, braises it in white wine until tender, and tosses it with chickpeas and a tangy mix of marinated carrots, fennel and celery.</p>
+                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
+                    <div class="product-categori">
+                        <div class="search-product">
+                            <form action="#">
+                                <input class="form-control" placeholder="Search here..." type="text">
+                                <button type="submit"> <i class="fa fa-search"></i> </button>
+                            </form>
+                        </div>
+                        <div class="filter-sidebar-left">
+                            <div class="title-left">
+                                <h3>Categories</h3>
+                            </div>
+                            <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
+                                <a href="#" class="list-group-item list-group-item-action">Crab <small class="text-muted">(7)</small></a>
+                                <a href="#" class="list-group-item list-group-item-action">Fish <small class="text-muted">(6)</small></a>
+                                <a href="#" class="list-group-item list-group-item-action"> Lobster  <small class="text-muted">(8) </small></a>
+                                <a href="#" class="list-group-item list-group-item-action"> Octopus <small class="text-muted">(8)</small></a>
+                                <a href="#" class="list-group-item list-group-item-action"> Shrimp <small class="text-muted">(8)</small></a>
+                            </div>
+                        </div>
+                        <div class="filter-price-left">
+                            <div class="title-left">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Shop Page -->
+
+    <!-- Start Feed  -->
+    <div th:replace="~{fragments::instagram-box}"></div>
+
+    <!-- End Feed  -->
+
+
+    <!-- Start Footer  -->
+    <footer th:replace="~{fragments::footer}"></footer>
+
+    <div th:replace="~{fragments::script}"></div>
+
+</body>
+
+</html>

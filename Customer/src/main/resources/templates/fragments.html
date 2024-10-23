@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title th:text="${title}"></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Site Icons -->
+    <link rel="stylesheet" href="https:"/>
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+    <link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+<body>
+<!-- Start Main Top -->
+<div class="main-top" th:fragment="main-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="our-link">
+                    <ul>
+                        <li><a href="#"> Số điện thoại: +84816762731</a></li>
+                        <li><a href="#"><i class="fas fa-location-arrow"></i> Địa chỉ: Đình Phong Phú, Phước Long B,
+                            Quận 9, Thành Phố Hồ Chí Minh</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="login-box">
+                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In"
+                            onchange="location = this.value;">
+                        <option th:text="${session.username}==null ? 'Lựa chọn' : ${session.username}"></option>
+                        <option th:if="${session.username == null}" th:value="@{/shop/login}">Đăng nhập
+                        </option>
+                        <option th:if="${session.username == null}" value="http://localhost:8020/shop/register">Đăng
+                            ký
+                        </option>
+                        <option th:if="${session.username != null}" value="http://localhost:8020/shop/logout">Đăng
+                            xuất
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Main Top -->
+
+<!-- Start Main Top -->
+<header class="main-header" th:fragment="main-header">
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <div class="container">
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" th:href="@{/}"><img th:src="@{/images/logo.png}" class="logo" width="130"
+                                                            height="80" alt=""></a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/menu}">Sản phẩm</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cửa hàng</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/shop-detail}">Chi tiết sản phẩm</a></li>
+                            <li><a th:href="@{/orders}">Đơn đặt hàng</a></li>
+                            <li><a th:href="@{/profile}">Tài Khoản</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item active"><a class="nav-link" th:href="@{/contact}">Liên hệ với chúng tôi</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav2">
+                <ul>
+                    <!--                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>-->
+                    <li class="side-menu">
+                        <a href="#" th:href="@{/cart}">
+                            <i class="fa fa-shopping-bag"></i>
+                            <span class="badge"
+                                  th:text="${session.totalItems == null} ? '0' : ${session.totalItems}"></span>
+                            <p>Giỏ hàng</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Atribute Navigation -->
+        </div>
+    </nav>
+    <!-- End Navigation -->
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div class="top-search" th:fragment="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+
+<!-- Start Slider -->
+<div class="all-title-box" th:fragment="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 th:text="${page}"></h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a th:href="@{/}">Cake Plus</a></li>
+                    <li class="breadcrumb-item active" th:text="${page}"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Slider -->
+
+<!-- Start Feed  -->
+<div class="instagram-box" th:fragment="instagram-box">
+    <div class="main-instagram owl-carousel owl-theme">
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/Happy Sunrise.png}" alt=""/>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/Cheri Lady.png}" alt=""/>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/My Muse.png}" alt=""/>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/Flan Gato Berry Mix.png}" alt=""/>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/Sweet Box Cool Summer (Purple).jpg}" alt=""/>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/Green Bliss.jpg}" alt=""/>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/Tropical Vibes Mousse.png}"
+                     alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Feed  -->
+
+
+<!-- Start Footer  -->
+<footer th:fragment="footer">
+    <div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="footer-top-box">
+                        <h3>Thời gian hoạt động</h3>
+                        <ul class="list-time">
+                            <li>Thứ 2 - Chủ Nhật: 08.00 đến 18.00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="footer-top-box">
+                        <h3>Liên hệ với chúng tôi</h3>
+                        <ul class="list-time">
+                            <li><i class="fas fa-phone-square"></i> Số điện thoại: +84816762731</li>
+                            <li><i class="fas fa-envelope"></i> Email: abc@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Địa chỉ: Đình Phong Phú, Phước Long B, Quận 9,
+                                Thành Phố Hồ Chí Minh
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="footer-top-box">
+                        <h3>Mạng xã hội</h3>
+                        <p>Hãy đến với Cake plus</p>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div th:fragment="script">
+    <!-- ALL JS FILES -->
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!-- ALL PLUGINS -->
+    <script th:src="@{/js/jquery.superslides.min.js}"></script>
+    <script th:src="@{/js/bootstrap-select.js}"></script>
+    <script th:src="@{/js/inewsticker.js}"></script>
+    <script th:src="@{/js/bootsnav.js}"></script>
+    <script th:src="@{/js/images-loded.min.js}"></script>
+    <script th:src="@{/js/isotope.min.js}"></script>
+    <script th:src="@{/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/js/baguetteBox.min.js}"></script>
+    <script th:src="@{/js/form-validator.min.js}"></script>
+    <script th:src="@{/js/contact-form-script.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>
+    <!--    <script src="js/jquery-3.2.1.min.js"></script>-->
+    <!--    <script src="js/popper.min.js"></script>-->
+    <!--    <script src="js/bootstrap.min.js"></script>-->
+    <!--    &lt;!&ndash; ALL PLUGINS &ndash;&gt;-->
+    <!--    <script src="js/jquery.superslides.min.js"></script>-->
+    <!--    <script src="js/bootstrap-select.js"></script>-->
+    <!--    <script src="js/inewsticker.js"></script>-->
+    <!--    <script src="js/bootsnav.js."></script>-->
+    <!--    <script src="js/images-loded.min.js"></script>-->
+    <!--    <script src="js/isotope.min.js"></script>-->
+    <!--    <script src="js/owl.carousel.min.js"></script>-->
+    <!--    <script src="js/baguetteBox.min.js"></script>-->
+    <!--    <script src="js/form-validator.min.js"></script>-->
+    <!--    <script src="js/contact-form-script.js"></script>-->
+    <!--    <script src="js/custom.js"></script>-->
+</div>
+</body>
+</html>

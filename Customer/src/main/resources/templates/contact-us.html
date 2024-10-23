@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<!-- Basic -->
+
+<head th:replace="~{fragments::head}">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- Start Main Top -->
+<div th:replace="~{fragments::main-top}">
+</div>
+<!-- End Main Top -->
+
+
+<!-- Start Main Top -->
+<header th:replace="~{fragments::main-header}">
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div th:replace="~{fragments::top-search}">
+</div>
+<!-- End Top Search -->
+
+
+<!-- Start All Title Box -->
+<div th:replace="~{fragments::all-title-box}">
+</div>
+<!-- End All Title Box -->
+
+<!-- Start Contact Us  -->
+<div class="contact-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <div class="contact-info-left">
+                    <h2>Liên hệ với chúng tôi</h2>
+                    <p>Hãy nhắn tin hoặc gọi điện cho chúng tôi nếu bạn muốn góp ý về món ăn của chúng tôi hoặc bạn cảm
+                        thấy bánh của chúng tôi có vấn đề.</p>
+                    <ul>
+                        <li>
+                            <p><i class="fas fa-map-marker-alt"></i>Địa chỉ: Đình Phong Phú, Phường Phước Long B, Quận 9,
+                                Thành Phố Hồ Chí Minh
+                            </p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-phone-square"></i>Số điện thoại: +84816762731</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-envelope"></i>Email: abc@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Cart -->
+
+<!-- Start Feed  -->
+<div th:replace="~{fragments::instagram-box}">
+</div>
+<!-- End Feed  -->
+
+<!-- Start Footer  -->
+<footer th:replace="~{fragments::footer}">
+</footer>
+<div th:replace="~{fragments::script}"></div>
+</body>
+
+</html>
