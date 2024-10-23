@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments::header}"></head>
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!--Sidebar-->
+    <ul th:replace="~{fragments::sidebar}"></ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav th:replace="~{fragments::top-navbar}"></nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <h1 style="margin-left: 20px">Thống kê</h1>
+            <form action="#" th:action="@{/searchStatistics}" method="get">
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="type">Lựa chọn:</label>
+                <select id="type" name="type">
+                    <option value="import">Nhập</option>
+                    <option value="export">Xuất</option>
+                </select>
+
+                <button type="submit">Tìm</button>
+            </form>
+
+            <div>
+                <h2 style="margin-left: 20px">Kết quả</h2>
+<!--                Import-->
+                <div class="table-main table-responsive">
+                    <table class="table" th:if="${type == 'import'}">
+                        <thead>
+                        <tr>
+                            <th class="name-cs">Tên sản phẩm</th>
+                            <th class="order-date">Ngày nhập</th>
+                            <th class="price-pr">Số lượng</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="product : ${products}">
+                            <td class="name-cs">
+                                <p th:text="${product.name}"></p>
+                            </td>
+                            <td class="order-date">
+                                <p th:text="${product.manufactureDate}"></p>
+                            </td>
+                            <td class="total-pr">
+                                <p th:text="${product.currentQuantity}"></p>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+<!--                    Export-->
+                    <table class="table" th:if="${type == 'export'}">
+                        <thead>
+                        <tr>
+                            <th class="name-cs">Tên sản phẩm</th>
+                            <th class="order-date">Ngày xuất</th>
+                            <th class="price-pr">Số lượng</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="od : ${orderDetails}">
+                            <td class="name-cs">
+                                <p th:text="${od.product.name}"></p>
+                            </td>
+                            <td class="order-date">
+                                <p th:text="${#dates.format(od.order.deliveryDate, 'dd/MM/yyyy')}"></p>
+                            </td>
+                            <td class="total-pr">
+                                <p th:text="${od.quantityProduct}"></p>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- End of Main Content -->
+
+                </div>
+
+            </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer th:replace="~{fragments::footer}"></footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+    </div>
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a th:replace="~{fragments::scroll}"></a>
+
+<!--Add Categories Modal-->
+
+
+<!--End-->
+
+<!-- End -->
+<!-- Bootstrap core JavaScript-->
+<div th:replace="~{fragments::script}"></div>
+
+<script th:src="@{/js/categories.js}"></script>
+</body>
+
+</html>

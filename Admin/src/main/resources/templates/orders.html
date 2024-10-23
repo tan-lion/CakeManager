@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments::header}"></head>
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!--Sidebar-->
+    <ul th:replace="~{fragments::sidebar}"></ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav th:replace="~{fragments::top-navbar}"></nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div th:if="${success}" class="text-center alert alert-success">
+                <p th:text="${success}">
+                </p>
+            </div>
+            <div class="table-main table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="order-date">Ngày đặt hàng</th>
+                        <th class="delivery-date">Ngày giao hàng</th>
+                        <th class="price-pr">Trạng thái</th>
+                        <th class="quantity-box">Tổng tiền</th>
+                        <th class="total-pr">Phương thức TT</th>
+                        <th class="-address-book">Địa chỉ</th>
+                        <th>Thao tác</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="order : ${orders}">
+                        <td class="order-date">
+                            <p th:text="${#dates.format(order.orderDate, 'dd/MM/yyyy HH:mm:ss')}"></p>
+                        </td>
+                        <td class="name-pr">
+                            <p th:if="${order.accept == true}"
+                               th:text="${#dates.format(order.deliveryDate, 'dd/MM/yyyy HH:mm:ss')}"></p>
+                            <p th:if="${order.accept != true}"
+                               th:text="${#dates.format(order.deliveryDate, 'dd/MM/yyyy HH:mm:ss')}"></p>
+                        </td>
+                        <td class="price-pr">
+                            <p th:text="${order.orderStatus}"></p>
+                        </td>
+                        <td class="total-pr">
+                            <p th:text="${#numbers.formatDecimal(order.totalPrice ,1,0)}"></p>
+                        </td>
+                        <td class="total-pr" style="color: black">
+                            <span>[(${order.paymentMethod})]</span>
+                        </td>
+                        <td class="-address-book">
+                            <p class="address-cs" th:text="${order.customer.getAddress()}"></p>
+                        </td>
+                        <td th:if="${order.accept} == false">
+
+                            <a th:href="@{/cancel-order(id = ${order.id})}"
+                               class="btn btn-primary"
+                               onclick="if(!(confirm('Bạn muốn hủy đơn hàng?'))) return false">Hủy</a>
+                            <a th:href="@{/accept-order(id = ${order.id})}"
+                               class=" btn btn-secondary"> Duyệt </a>
+                        </td>
+                        </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer th:replace="~{fragments::footer}"></footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+    </div>
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a th:replace="~{fragments::scroll}"></a>
+
+<!--Add Categories Modal-->
+
+
+<!--End-->
+
+<!-- End -->
+<!-- Bootstrap core JavaScript-->
+<div th:replace="~{fragments::script}"></div>
+
+<script th:src="@{/js/categories.js}"></script>
+</body>
+
+</html>

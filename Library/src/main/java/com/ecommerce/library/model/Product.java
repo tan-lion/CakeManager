@@ -1,0 +1,36 @@
+package com.ecommerce.library.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "products", uniqueConstraints = @UniqueConstraint(columnNames = {"name", "image"}))
+public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
+    private Integer id;
+    private String name;
+    private String description;
+    private Integer currentQuantity;
+    private Double costPrice;
+    private Integer discount;
+    @Temporal(TemporalType.DATE)
+    private Date manufactureDate;
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private String image;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
+    private Category category;
+    private boolean is_activated;
+    private boolean is_deleted;
+
+}
